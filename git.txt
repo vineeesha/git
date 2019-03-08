@@ -1,0 +1,245 @@
+1)what is the difference between git pull and git fetch?
+ans)git pull = git fetch +git merge. when we did a git pull command it stored in the local repo
+and working copy. when we did a git fetch command it stored in the local repo.  In simplest form
+git pull does a git fetch followed by a git merge.
+
+2)What is a "git fork"?
+ans)A fork is a copy of a repository. Forking a repository allows you to freely experiment with 
+changes without affecting the original project. Most commonly, forks are used to either propose 
+changes to someone else's project or to use someone else's project as a starting point for your 
+own idea.
+
+3)Which branching strategy follows in your company?
+ans)
+
+4)How can you reslove git push conflicts?
+ans)A conflict arises when the commit that has to be merged haas some change in one place and the current also has a change at the same place. git will not able to predicvt with change should take a precedence.
+
+5)how to check remote origin?
+ans)1.Open. 
+    2.Change the current directory to your local project.
+    3.List your existing remotes in order to get the name of the remote you want to change.
+      git remote -v
+
+6)How you can restrict particular files to push central repo?
+ans)
+
+7)What is the purpose of working off multiple branches?
+ans)Branches help separate different projects so that it is easy to push out only finished 
+projects. Branches also tend to be easier than cloned directories for pulling in changes and 
+for sharing changes across multiple projects.
+
+8)How can you undo the last commit?
+ans)git revert commitid
+
+9)How you can undo the last commit if commits are already pushed to central?
+ans)Delete a remote commit. To remove a commit you already pushed to your 
+origin or to another remote repository you have to first delete it locally like in the previous
+step and then push your changes to the remote. Notice the + sign before the name of the branch
+you are pushing, this tells git to force the push.
+
+10)what is a pull request in git?
+ans)Pull requests let you tell others about changes you've pushed to a GitHub repository. Once a
+pull request is sent, interested parties can review the set of changes, discuss potential 
+modifications, and even push follow-up commits if necessary. pull requests are a mechanism for a 
+developer to notify team members that they have completed a feature. Once their feature branch
+is ready, the developer files a pull request via their Bitbucket account.
+
+11)How to discard all changes in "working area"?
+ans)git stash. This commmasnd is used for copy the updated code from the working copy to the 
+temp file.
+
+12)What is origin in git?
+ans) "origin" is a shorthand name for the remote repository that a project was originally cloned 
+from. More precisely, it is used instead of that original repository's URL - and thereby makes
+referencing much easier. Note that origin is by no means a "magical" name, but just a standard 
+convention. We can see more information about the remote by typing git remote show origin.
+
+13)What is "fast forward" merge?
+ans)In certain situations, Git does a fast forward when you merge a branch that is ahead of your
+checked-out branch. ... The branch had a single commit (and could have had several) before the
+merge. The branch is ahead of the master at the point of the merge.
+
+14)How to rename your local branch?
+ans)If you want to rename a branch while pointed to any branch, do:
+      git branch -m <oldname> <newname>
+If you want to rename the current branch, you can do:
+      git branch -m <newname>
+
+15)What "git init" command will do?
+ans)It will create a local repo. The git init command creates a new Git repository. It can be 
+used to convert an existing, unversioned project to a Git repository or initialize a new, empty
+repository. Most other Git commands are not available outside of an initialized repository, so 
+this is usually the first command you'll run in a new project.
+
+16)When "recursive merge"will takes place?
+ans)
+
+17)What is “rebase merge” in git?
+ans)
+
+18)If am working for a.java file in git, it is not fully completed but now for emergency purpose
+i want to work for b.java file as well as i also want to pushb.java file to central what is the
+solution ?
+ans)
+
+19)How can i delete a branch in local?
+ans)git branch -d branchname
+
+20)What is “cherry-pick” can you explain with one use case?
+ans)Cherry picking in Git is designed to apply some commit from one branch into another branch.
+It can be done if you eg. made a mistake and committed a change into wrong branch, but do not 
+want to merge the whole branch. ... To use it, you just need git cherry-pick hash , where hash 
+is a commit hash from other branch.
+
+21)How you can merge the changes that were made in the working branch with the master branch ?
+ans)1.Open .
+    2.Change the current working directory to your local project.
+    3.Check out the branch you wish to merge to. Usually, you will merge into master . ...
+    4.If there are conflicts, resolve them. ...
+    5.Commit the merge.
+    6.Review the changes and ensure they are satisfactory.
+    7.Push the merge to your GitHub repository.
+ 
+22)How to list all commits of a particular file?
+ans)git log. This shows all the commits id and what they are commited.
+
+23)What data you can see when you use “git log” command?
+ans)It shows all the commit id and commit messages. And also it shows the some annother information about that commit.
+
+24)what is the difference between "git pull" and "git clone"?
+ans)git pull origin master
+git pull does a git fetch followed by a git merge. Since “git pull” tries to merge remote 
+changes with your local ones, a so-called “merge conflict” can occur. It’s highly recommended to
+start a “git pull” only with a clean working copy.
+git clone git@github.com:whatever/something.git
+Git clone will clone a repo int a newly created directory. Git clone additionally creates a 
+remote called ‘origin’ for the repo cloned from, sets up a local branch based on the remote’s 
+active branch (generally master), and creates remote-tracking branches for all the branches in 
+the repo.
+
+
+
+25)How to edit an incorrect commit message in git?
+ans)In detail: Create a temporary work branch
+git checkout -b temp
+Reset to the commit to replace
+git reset --hard <sha1>
+Amend the commit with the right message
+git commit --amend -m "<right message>"
+Replace the old commit with the new one
+git replace <old commit sha1> <new commit sha1>
+go back to the branch where you were
+git checkout <branch>
+remove temp branch
+git branch -D temp
+push
+guess
+done.
+
+26)What is the purpose of tagging?
+ans)Tagging is generally used to capture a point in history that is used for a marked version 
+release (i.e. v1.0.1). A tag is like a branch that doesn't change. Unlike branches, tags, after 
+being created, have no further history of commits.For more info on branches visit the git branch
+page. It is immutable. Once create and not able to update. it is create for production release.
+
+27)how to list the author username and email?
+ans)git config --list
+for changing the username and email
+	git config --global user.name "*****"
+	git config --global user.email "******"
+
+28)How see unmerged branches in git?
+ans)You can list all branches which have not been merged into current branch.unmerged branches
+	git branch -a --no-merged
+The reverse merged branches
+	git branch -a --merged
+
+29)What is ".gitignore" file?
+ans)Create a local .gitignore. If you create a file in your repository named .gitignore, Git 
+uses it to determine which files and directories to ignore, before you make a commit. A 
+.gitignore file should be committed into your repository, in order to share the ignore rules 
+with any other users that clone the repository.
+
+30)How you can unstage a file?
+ans)If you've accidentally staged all your changed files you can unstage them all by using 
+git reset . This should put you back in the state you were before staging all your changes files
+Allowing you to stage changed files individually before you commit.
+
+31)What is difference between “git revert” and “git reset?
+ans)git revert commit id. This command is used for reverse the commit.git reset. by 
+this all the files present in staging area comes into the working area. if we want particular 
+file then give that filename.
+
+32)What is git version control system?
+ans)git-scm.com. Git (/g?t/) is a version-control system for tracking changes in computer files and coordinating work on those files among multiple people. It is primarily used for source-code management in software development, but it can be used to keep track of changes in any set of files.
+
+33)what is branch command? And what is the use of git command?
+ans)In a collaborative environment, it is common for several developers to share and work on the same source code. While some developers will be fixing bugs, others will be implementing new features, etc. With so much going on, there needs to be a system in place for managing different versions of the same code base.Branching allows each developer to branch out from the original code base and isolate their work from others. It also helps Git to easily merge versions later on.
+
+34)What is  git cherry pick?
+Ans)The command git cherry-pick is typically used to introduce particular commits from one branch within a repository onto a different branch. A common use is to forward- or back-port commits from a maintenance branch to a development branch.This is in contrast with other ways such as merge and rebase which normally apply many commits onto another branch.
+
+35)What is version control system?
+Ans)a system that keeps the records of your changes. allows for collaborative development. Allows you to know who make the changes and what they are did when they did the changes. Allows you to revert any chnages.
+
+36)what is git?
+Ans)git is a open source distributed version control system, designed for speed and efficiency. git is for a command line. GitHub is the web interface.GitHub is also a code hosting site. free for public repositories.
+git did the creating repo:git init
+git did the making the changes:git status, git add, git commit
+git did parallel development:git branch, git merge,git rebase
+git did the synching repo:git add origin, git push, git pull
+
+37)some definations?
+Ans)Branch:indicator of divergence from base.
+Commit:point in time snapshot of repo with changes.
+fork:copy repo, copy of repo
+issue:defects,tasks or feature requests
+organization:collection of repositories
+pull request:comparision of edits to see if team want to accept the changs
+repo:collection of stored code.
+
+38)Tell me the difference between HEAD, working tree and index, in Git?
+Ans)The working tree/working directory/workspace is the directory tree of (source) files that you see and edit.The index/staging area is a single, large, binary file in <baseOfRepo>/.git/index, which lists all files in the current branch, their sha1 checksums, time stamps and the file name - it is not another directory with a copy of files in it.
+HEAD is a reference to the last commit in the currently checked-out branch.
+
+39) When should I use "git stash"?
+Ans)The git stash command takes your uncommitted changes (both staged and unstaged), saves them away for later use, and then reverts them from your working copy.The one place we could use stashing is if we discover we forgot something in our last commit and have already started working on the next one in the same branch
+
+40) How to remove a file from git without removing it from your file system?
+Ans)If you are not careful during a git add, you may end up adding files that you didn’t want to commit. However, git rm will remove it from both your staging area (index), as well as your file system (working tree), which may not be what you want.
+This means that git reset <paths> is the opposite of git add <paths>.
+  
+41)When do you use "git rebase" instead of "git merge"?
+Ans)Both of these commands are designed to integrate changes from one branch into another branch - they just do it in very different ways.
+Consider before merge/rebase:
+A <- B <- C    [master]
+^
+ \
+  D <- E       [branch]
+after git merge master:
+A <- B <- C
+^         ^
+ \         \
+  D <- E <- F
+after git rebase master:
+A <- B <- C <- D <- E
+With rebase you say to use another branch as the new base for your work.
+
+42)How the git conflict can be resloved?
+Ans)to slove the conflict in git edit the filees to fix the conflicting changes and then add the resloved files by running "git add" after that to commit the repaired merge, run "git commit" . git remember that you are in the middle of the merger so it sets the parents of the commit correctly.
+
+43)Some of the git client for linux?
+Ans)git cola, git -g, smart git, giggle, git gui,qgit
+
+44)Wht is git Is-tree?
+Ans)"git Is-tree" represents a tree object including the mode and the name of each item and the SHA-1 value of the blob or the tree.
+
+45)What is git instaweb is used?
+Ans)"git instaweb" automatically directs a web browser and runs web browser with an interface into your local repo.
+
+46)what does hooks consist of in git?
+Ans)This directory consists of shell scripts which are activated afterb running the corresponding git commands. for example git will try to execute the post commit script after you run a commit.
+
+47)how can you  fix the broken commit?
+Ans)to fix any  broken commit, you will use the command "git command-amend". by running this command, you can fix the broken commit message in the editor.
